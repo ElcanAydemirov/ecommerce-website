@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Əlaqə - TechStore</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-laptop"></i>
+                    <span>TechStore</span>
+                </div>
+                
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="index.html">Ana Səhifə</a></li>
+                        <li><a href="products.html">Məhsullar</a></li>
+                        <li><a href="about.html">Haqqımızda</a></li>
+                        <li><a href="services.html">Xidmətlər</a></li>
+                        <li><a href="contact.html" class="active">Əlaqə</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Məhsul axtarın...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="action-btn wishlist-btn">
+                            <i class="fas fa-heart"></i>
+                            <span class="badge">0</span>
+                        </button>
+                        
+                        <button class="action-btn cart-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge">0</span>
+                        </button>
+                        
+                        <button class="login-btn">
+                            <i class="fas fa-user"></i>
+                            Giriş
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Bizimlə Əlaqə</h1>
+                <p>Suallarınız var? Bizimlə əlaqə saxlayın</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Əlaqə Məlumatları</h2>
+                    <p>Bizə müraciət etmək üçün aşağıdakı üsullardan istifadə edə bilərsiniz.</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Ünvan</h3>
+                            <p>Nizami küçəsi 123, Bakı, Azərbaycan</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Telefon</h3>
+                            <p>+994 12 345 67 89</p>
+                            <p>+994 50 123 45 67</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>E-mail</h3>
+                            <p>info@techstore.az</p>
+                            <p>support@techstore.az</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>İş Saatları</h3>
+                            <p>Bazar ertəsi - Cümə: 09:00 - 18:00</p>
+                            <p>Şənbə: 10:00 - 16:00</p>
+                            <p>Bazar: Bağlı</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h2>Mesaj Göndərin</h2>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Ad</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Soyad</label>
+                                <input type="text" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>E-mail</label>
+                                <input type="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Telefon</label>
+                                <input type="tel">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Mövzu</label>
+                            <select required>
+                                <option value="">Mövzu seçin</option>
+                                <option value="general">Ümumi sual</option>
+                                <option value="support">Texniki dəstək</option>
+                                <option value="order">Sifariş haqqında</option>
+                                <option value="complaint">Şikayət</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Mesaj</label>
+                            <textarea rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Mesaj Göndər
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2>Bizim Yerləşdiyimiz Yer</h2>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <p>Xəritə burada göstəriləcək</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tez-tez Verilən Suallar</h2>
+                <p>Ən çox soruşulan suallar və cavabları</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Çatdırılma nə qədər vaxt alır?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Bakı daxilində sifarişlər 24 saat ərzində çatdırılır. Regionlara çatdırılma 2-3 iş günü çəkir.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Qaytarma şərtləri necədir?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Məhsulları alış tarixindən 30 gün ərzində qaytara bilərsiniz. Məhsul orijinal qablaşmasında və istifadə edilməmiş vəziyyətdə olmalıdır.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Zəmanət müddəti nə qədərdir?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Bütün məhsullarımıza 2 il rəsmi zəmanət veririk. Zəmanət xidməti pulsuz təqdim edilir.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Ödəniş üsulları hansılardır?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nağd, bank kartı, bank köçürməsi və taksitlə ödəniş imkanları mövcuddur.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-laptop"></i>
+                        <span>TechStore</span>
+                    </div>
+                    <p>Texnologiya dünyasında ən yaxşı məhsulları təqdim edirik. Keyfiyyət və müştəri məmnuniyyəti bizim prioritetimizdir.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Məhsullar</h4>
+                    <ul>
+                        <li><a href="products.html">Smartfonlar</a></li>
+                        <li><a href="products.html">Laptoplar</a></li>
+                        <li><a href="products.html">Planşetlər</a></li>
+                        <li><a href="products.html">Aksesuarlar</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Dəstək</h4>
+                    <ul>
+                        <li><a href="services.html">Çatdırılma</a></li>
+                        <li><a href="services.html">Qaytarma</a></li>
+                        <li><a href="services.html">Zəmanət</a></li>
+                        <li><a href="contact.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Əlaqə</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +994 12 345 67 89</p>
+                        <p><i class="fas fa-envelope"></i> info@techstore.az</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Bakı, Azərbaycan</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechStore. Bütün hüquqlar qorunur.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

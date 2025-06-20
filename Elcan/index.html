@@ -6,6 +6,7 @@
     <title>TechStore - Texnologiya Mağazası</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
@@ -19,10 +20,11 @@
                 
                 <nav class="nav-menu">
                     <ul>
-                        <li><a href="#home">Ana Səhifə</a></li>
-                        <li><a href="#products">Məhsullar</a></li>
-                        <li><a href="#about">Haqqımızda</a></li>
-                        <li><a href="#contact">Əlaqə</a></li>
+                        <li><a href="index.html" class="active">Ana Səhifə</a></li>
+                        <li><a href="products.html">Məhsullar</a></li>
+                        <li><a href="about.html">Haqqımızda</a></li>
+                        <li><a href="services.html">Xidmətlər</a></li>
+                        <li><a href="contact.html">Əlaqə</a></li>
                     </ul>
                 </nav>
                 
@@ -102,6 +104,42 @@
         </div>
     </section>
 
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Sürətli Çatdırılma</h3>
+                    <p>24 saat ərzində çatdırılma xidməti</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Zəmanət</h3>
+                    <p>Bütün məhsullara 2 il zəmanət</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Dəstək</h3>
+                    <p>Hər zaman əlçatan müştəri xidməti</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <h3>Qaytarma</h3>
+                    <p>30 gün ərzində pulsuz qaytarma</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Products Section -->
     <section class="products-section" id="products">
         <div class="container">
@@ -119,6 +157,22 @@
             
             <div class="products-grid" id="productsGrid">
                 <!-- Products will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2>Xəbərlərdən xəbərdar olun</h2>
+                    <p>Yeni məhsullar və xüsusi təkliflər haqqında ilk siz öyrənin</p>
+                </div>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="E-mail ünvanınız">
+                    <button type="submit">Abunə ol</button>
+                </div>
             </div>
         </div>
     </section>
@@ -250,20 +304,20 @@
                 <div class="footer-section">
                     <h4>Məhsullar</h4>
                     <ul>
-                        <li><a href="#">Smartfonlar</a></li>
-                        <li><a href="#">Laptoplar</a></li>
-                        <li><a href="#">Planşetlər</a></li>
-                        <li><a href="#">Aksesuarlar</a></li>
+                        <li><a href="products.html">Smartfonlar</a></li>
+                        <li><a href="products.html">Laptoplar</a></li>
+                        <li><a href="products.html">Planşetlər</a></li>
+                        <li><a href="products.html">Aksesuarlar</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <h4>Dəstək</h4>
                     <ul>
-                        <li><a href="#">Çatdırılma</a></li>
-                        <li><a href="#">Qaytarma</a></li>
-                        <li><a href="#">Zəmanət</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="services.html">Çatdırılma</a></li>
+                        <li><a href="services.html">Qaytarma</a></li>
+                        <li><a href="services.html">Zəmanət</a></li>
+                        <li><a href="contact.html">FAQ</a></li>
                     </ul>
                 </div>
                 
@@ -291,7 +345,7 @@
         </div>
     </div>
 
-    <script src="data.js" type="module"></script>
-    <script src="index.js" type="module"></script>
+    <script src="./data.js" type="module"></script>
+    <script src="./index.js" type="module"></script>
 </body>
 </html>

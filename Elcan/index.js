@@ -203,6 +203,9 @@ function updateCartUI() {
   cartBadge.textContent = totalItems
   cartTotal.textContent = totalPrice + "₼"
 
+  console.log(cartItems);
+  
+
   if (cart.length === 0) {
     cartItems.innerHTML = `
             <div class="empty-cart">
