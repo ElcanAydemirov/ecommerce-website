@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Texnologiya Mağazası</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-laptop"></i>
+                    <span>TechStore</span>
+                </div>
+                
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="#home">Ana Səhifə</a></li>
+                        <li><a href="#products">Məhsullar</a></li>
+                        <li><a href="#about">Haqqımızda</a></li>
+                        <li><a href="#contact">Əlaqə</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Məhsul axtarın...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="action-btn wishlist-btn" onclick="toggleWishlistView()">
+                            <i class="fas fa-heart"></i>
+                            <span class="badge" id="wishlistBadge">0</span>
+                        </button>
+                        
+                        <button class="action-btn cart-btn" onclick="toggleCartView()">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge" id="cartBadge">0</span>
+                        </button>
+                        
+                        <button class="login-btn" onclick="showLoginModal()">
+                            <i class="fas fa-user"></i>
+                            Giriş
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-slider">
+            <div class="slide active">
+                <div class="slide-content">
+                    <h1>Ən Yeni Texnologiyalar</h1>
+                    <p>Premium keyfiyyətdə məhsullar, sərfəli qiymətlər</p>
+                    <button class="cta-btn">İndi Alış-veriş Et</button>
+                </div>
+                <div class="slide-bg bg-1"></div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <h1>Pulsuz Çatdırılma</h1>
+                    <p>200₼-dən yuxarı sifarişlər üçün pulsuz çatdırılma</p>
+                    <button class="cta-btn">Ətraflı Məlumat</button>
+                </div>
+                <div class="slide-bg bg-2"></div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <h1>24/7 Dəstək</h1>
+                    <p>Hər zaman yanınızdayıq, suallarınızı cavablandırırıq</p>
+                    <button class="cta-btn">Bizimlə Əlaqə</button>
+                </div>
+                <div class="slide-bg bg-3"></div>
+            </div>
+        </div>
+        
+        <div class="slider-controls">
+            <button class="prev-btn" onclick="changeSlide(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="next-btn" onclick="changeSlide(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <div class="slider-dots">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Məhsullarımız</h2>
+                <p>Ən yaxşı texnologiya məhsulları</p>
+            </div>
+            
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">Hamısı</button>
+                <button class="filter-btn" data-filter="phone">Telefonlar</button>
+                <button class="filter-btn" data-filter="laptop">Laptoplar</button>
+                <button class="filter-btn" data-filter="accessory">Aksesuarlar</button>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Səbət</h3>
+            <button class="close-btn" onclick="toggleCartView()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Səbətiniz boşdur</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Cəmi: </span>
+                <span id="cartTotal">0₼</span>
+            </div>
+            <button class="checkout-btn">
+                <i class="fas fa-credit-card"></i>
+                Sifarişi Tamamla
+            </button>
+        </div>
+    </div>
+
+    <!-- Wishlist Sidebar -->
+    <div class="wishlist-sidebar" id="wishlistSidebar">
+        <div class="wishlist-header">
+            <h3><i class="fas fa-heart"></i> Bəyənilənlər</h3>
+            <button class="close-btn" onclick="toggleWishlistView()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="wishlist-items" id="wishlistItems">
+            <div class="empty-wishlist">
+                <i class="fas fa-heart"></i>
+                <p>Bəyənilən məhsul yoxdur</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Giriş</h3>
+                <button class="close-btn" onclick="hideLoginModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="email" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Şifrə</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Giriş</button>
+                </form>
+                <div class="modal-footer">
+                    <p>Hesabınız yoxdur? <a href="#" onclick="showRegisterModal()">Qeydiyyat</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal-overlay" id="registerModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Qeydiyyat</h3>
+                <button class="close-btn" onclick="hideRegisterModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label>Ad Soyad</label>
+                        <input type="text" id="registerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="email" id="registerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Şifrə</label>
+                        <input type="password" id="registerPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Şifrəni Təkrarla</label>
+                        <input type="password" id="confirmPassword" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Qeydiyyat</button>
+                </form>
+                <div class="modal-footer">
+                    <p>Artıq hesabınız var? <a href="#" onclick="showLoginModal()">Giriş</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-laptop"></i>
+                        <span>TechStore</span>
+                    </div>
+                    <p>Texnologiya dünyasında ən yaxşı məhsulları təqdim edirik. Keyfiyyət və müştəri məmnuniyyəti bizim prioritetimizdir.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Məhsullar</h4>
+                    <ul>
+                        <li><a href="#">Smartfonlar</a></li>
+                        <li><a href="#">Laptoplar</a></li>
+                        <li><a href="#">Planşetlər</a></li>
+                        <li><a href="#">Aksesuarlar</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Dəstək</h4>
+                    <ul>
+                        <li><a href="#">Çatdırılma</a></li>
+                        <li><a href="#">Qaytarma</a></li>
+                        <li><a href="#">Zəmanət</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Əlaqə</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +994 12 345 67 89</p>
+                        <p><i class="fas fa-envelope"></i> info@techstore.az</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Bakı, Azərbaycan</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechStore. Bütün hüquqlar qorunur.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <div class="notification-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="notificationText"></span>
+        </div>
+    </div>
+
+    <script src="data.js" type="module"></script>
+    <script src="index.js" type="module"></script>
+</body>
+</html>
